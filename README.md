@@ -1,2 +1,4 @@
 # Blog-posting-website
-Made by using ejs and bootsrap 
+
+To run this app:
+Set up the project repository, initialize the Node.js application, and install necessary dependencies (Express.js, EJS).
