@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Create New Post</title>
+</head>
+<body>
+  <div class="container">
+    <header class="my-4">
+      <h1 class="text-center">Create New Post</h1>
+    </header>
+
+    <form action="/new" method="POST" class="needs-validation" novalidate>
+      <div class="form-group">
+        <label for="title">Post Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter post title" required>
+        <div class="invalid-feedback">Please provide a title for your post.</div>
+      </div>
+      <div class="form-group">
+        <label for="content">Post Content</label>
+        <textarea class="form-control" id="content" name="content" rows="5" placeholder="Enter post content" required></textarea>
+        <div class="invalid-feedback">Please provide content for your post.</div>
+      </div>
+      <button type="submit" class="btn btn-success">Create</button>
+      <a href="/" class="btn btn-secondary">Go Back</a>
+    </form>
+  </div>
+
+  <%- include('./partials/footer.ejs') %>
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+</body>
+</html>
+
+
